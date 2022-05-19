@@ -1,0 +1,89 @@
+$utilites: (
+  justfify: (
+    center: center,
+    between: 'justify-between',
+    around: 'justify-around'
+  )
+  align: (
+    center: center,
+    start: 'flex-start',
+    end: 'flex-end'
+  )
+);
+
+//* color
+@each $color, $value in $color-palette {
+  .bg-#{$color} { //* text
+    background-color: get-color(clr-#{$color});
+  } 
+
+  .text-#{$color} { //* background
+    color: get-color(clr-#{$color});
+  } 
+};
+
+//* fonts
+//* weight
+@each $fw, $value in $font-weight {
+  .fw-#{$fw} {
+    font-weight: $value;
+  }
+}
+
+//* size
+@each $fs, $value in $font-size {
+  .fs-#{$fs} {
+    font-size: $value;
+  }
+}
+
+//* letter-spacing
+@each $ls, $value in $letter-spacing {
+  .letter-spacing-#{$ls} {
+    font-size: $value;
+  }
+}
+
+// center
+  //center-x
+  // center-y
+
+//* center-flex
+.center-flex {
+  display: flex;
+  place-items: center;
+}
+
+//* center-grid
+  .center-flex {
+    display: grid;
+    place-items: center;
+  }
+
+// display 
+  // flex
+  // grid
+
+// justify
+  // between
+  // center
+
+// spacing
+@each $space-num, $space in $spaceing {
+  .p-#{$space-num} { //* padding
+    padding: $space
+  }
+
+  .m-#{$space-num} { //* margin
+    margin: $space
+  }
+  @each $side-name, $side in $sides {
+    .p-#{$side-name} { //* padding-sides
+      padding-#{$side}: $space
+    }
+    .m-#{$side-name} { //* margin-sides
+      margin-#{$side}: $space
+    }
+  }
+}
+

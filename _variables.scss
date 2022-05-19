@@ -1,0 +1,66 @@
+// colors
+$color-palette: (
+  cyan: 180 66% 49%,
+  dark-violet: 257 27% 26%,
+  red: 0 87% 67%,
+  accent: 231 77% 90%,
+  gray: 0 0% 75%,
+  grayish-violet: 257 7% 63%,
+  very-dark-blue: 255 11% 22%,
+  very-dark-ivolet: 260 8% 14%,
+);
+
+
+// typography
+$font-family: 'sans-serif';
+
+$base-font: 16px;
+
+$font-weight: (
+  bold: 900,
+  semi-bold: 900,
+  normal: 900,
+  light: 900,
+);
+
+$font-sizes: (
+  100: $base-font * .75,   // 12px
+  200: $base-font * 0.875, // 14px
+  300: $base-font * 1,     // 16px
+  400: $base-font * 1.125, // 18px
+  500: $base-font * 1.25,  // 20px
+  600: $base-font * 1.5,   // 24px
+  700: $base-font * 1.75,  // 28px
+  800: $base-font * 2,     // 32px
+);
+
+$letter-spacing: (
+  1: 0.25px,
+  2: 0.5px,
+  3: 1px,
+  4: 1.5px,
+);
+
+// spacing 
+$base-space: 1rem;
+
+$sides: (
+  x:inline,
+  y: block,
+  left: inline-start,
+  top: block-start,
+  right: inline-end,
+  bottom: block-end,
+);
+
+
+$spaceing: (
+  1: $base-space * .25,
+  2: $base-space * .5,
+  3: $base-space * .75,
+  4: $base-space * 1, // base
+  5: $base-space * 1.5,
+  6: $base-space * 2,
+  7: $base-space * 2.5,
+  8: $base-space * 3,
+)

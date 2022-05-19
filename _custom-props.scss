@@ -1,0 +1,21 @@
+
+::root {
+  // color-palette
+  @each $key, $color in $color-theme {
+    --clr-#{$key}: #{$color};
+  };
+  
+  // fonts
+    // font-family
+    // font-weight
+    // font-size
+    @each $font, $size in $font-sizes {
+      --fs-#{$font}: #{$size};
+    };
+}
+
+/*
+@media (prefers-color-scheme: dark) {
+
+}
+*/
