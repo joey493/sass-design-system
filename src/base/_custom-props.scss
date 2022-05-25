@@ -1,0 +1,22 @@
+@use '../abstracts/variables' as *;
+
+::root {
+  /* color-palette */
+  @each $key, $color in $color-palette {
+    --clr-#{$key}: #{$color};
+  };
+  
+  // fonts
+    /* font-family */
+    @each $font, $family in $font-family {
+      --ff-#{$font}: #{$family};
+    };
+    /* font-weight */
+    @each $font, $weight in $font-weight {
+      --ff-#{$font}: #{$weight};
+    };
+    /* font-size */
+    @each $font, $size in $font-sizes {
+      --fs-#{$font}: #{$size};
+    };
+}

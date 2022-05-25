@@ -1,29 +1,17 @@
-$utilites: (
-  justfify: (
-    center: center,
-    between: 'justify-between',
-    around: 'justify-around'
-  )
-  align: (
-    center: center,
-    start: 'flex-start',
-    end: 'flex-end'
-  )
-);
+@use '../abstracts' as *;
 
 //* color
 @each $color, $value in $color-palette {
-  .bg-#{$color} { //* text
+  .bg-#{$color} { //* background
     background-color: get-color(clr-#{$color});
   } 
 
-  .text-#{$color} { //* background
+  .text-#{$color} { //* text
     color: get-color(clr-#{$color});
   } 
 };
 
-//* fonts
-//* weight
+//* fonts //* weight
 @each $fw, $value in $font-weight {
   .fw-#{$fw} {
     font-weight: $value;
@@ -31,7 +19,7 @@ $utilites: (
 }
 
 //* size
-@each $fs, $value in $font-size {
+@each $fs, $value in $font-sizes {
   .fs-#{$fs} {
     font-size: $value;
   }
@@ -44,31 +32,7 @@ $utilites: (
   }
 }
 
-// center
-  //center-x
-  // center-y
-
-//* center-flex
-.center-flex {
-  display: flex;
-  place-items: center;
-}
-
-//* center-grid
-  .center-flex {
-    display: grid;
-    place-items: center;
-  }
-
-// display 
-  // flex
-  // grid
-
-// justify
-  // between
-  // center
-
-// spacing
+//* spacing
 @each $space-num, $space in $spaceing {
   .p-#{$space-num} { //* padding
     padding: $space
@@ -77,6 +41,7 @@ $utilites: (
   .m-#{$space-num} { //* margin
     margin: $space
   }
+  
   @each $side-name, $side in $sides {
     .p-#{$side-name} { //* padding-sides
       padding-#{$side}: $space
@@ -87,3 +52,12 @@ $utilites: (
   }
 }
 
+//* generate different utilities
+@each $utility, $prop in $utilites {
+  @each $item, $value in $prop {
+    @debug $value;
+    .#{$utility}-#{$item} {
+      #{$utility}: $value; 
+    }
+  }
+}

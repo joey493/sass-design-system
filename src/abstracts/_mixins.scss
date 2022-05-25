@@ -1,0 +1,84 @@
+@use './variables' as *;
+
+//* flow => set margin-top for all children except first one
+@mixin flow($parent, $flow-space: 1rem) {
+  #{$parent} {
+    > *:where(:not(:first-child)){
+      margin-block-start: $flow-space;
+    }
+  }
+};
+
+//* center-position
+@mixin center-position($direction: both, $position: absolute) {
+  position: $position;
+  
+  @if $direction == both { //* center X & Y
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  } @else if $direction == x { //* center X
+    left: 50%;
+    transform: translateX(-50%);
+  } @else if $direction == y { //* center Y
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+//* Hiding text overflow
+@mixin truncate($overflow: ellipsis) {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: $overflow;
+}
+
+//* media queries
+@mixin breakpoint-up($size) { // min-width
+  @media (min-width: map.get($breakpoints, $size)) {
+    @content;
+  }
+};
+
+@mixin breakpoint-between($min, $max) { // min < media < max
+  @media (min-width: map.get($breakpoints, $min)) and (max-width: map.get($breakpoints, $max)) {
+    @content;
+  }
+};
+
+@mixin breakpoint-down($size) { // max-width
+  @media (max-width: map.get($breakpoints, $size)) {
+    @content;
+  }
+};
+
+//* flex
+@mixin flex-variant($display, $direction: false, $align: false, $justify: false, $wrap: false) {
+  display: $display;
+
+  @if $direction {
+    flex-direction: $direction;
+  }
+  @if $align {
+    align-items: $align;
+  }
+  @if $justify {
+    justify-content: $justify;
+  }
+  @if $wrap {
+    flex-wrap: $wrap;
+  }
+  
+  // fix
+  & > * {
+    min-width: 0;
+  }
+}
+
+@mixin flex($direction: false, $align: false, $justify: false, $wrap: false) {
+  @include flex-variant(flex, $direction: $direction, $align: $align, $justify: $justify, $wrap: $wrap);
+}
+
+@mixin inline-flex($direction: false, $align: false, $justify: false, $wrap: false) {
+  @include flex-variant(inline-flex, $direction: $direction, $align: $align, $justify: $justify, $wrap: $wrap);
+}

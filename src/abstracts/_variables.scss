@@ -1,0 +1,96 @@
+//* container width
+$max-width: 60rem;
+
+//* colors in hsl
+$color-palette: (
+  'cyan': 180 66% 49%,
+  'dark-violet': 257 27% 26%,
+  'red': 0 87% 67%,
+  'accent': 231 77% 90%,
+  'gray': 0 0% 75%,
+  'grayish-violet': 257 7% 63%,
+  'very-dark-blue': 255 11% 22%,
+  'very-dark-violet': 260 8% 14%,
+);
+
+
+//* typography
+$font-family: (
+  roboto: ('Roboto', sans-serif),
+  poppins: ('Poppins', sans-serif)
+);
+
+$base-font: 16px;
+
+$font-sizes: (
+  100: $base-font * .75,  
+  200: $base-font * 0.875,
+  300: $base-font * 1,   // base 
+  400: $base-font * 1.125,
+  500: $base-font * 1.25, 
+  600: $base-font * 1.5,  
+  700: $base-font * 1.75, 
+  800: $base-font * 2,    
+);
+
+$font-weight: (
+  bold: 900,
+  semi-bold: 700,
+  normal: 400,
+  light: 300,
+);
+
+$letter-spacing: (
+  1: 0.25px,
+  2: 0.5px,
+  3: 1px,
+  4: 1.5px,
+);
+
+//* spacing 
+$base-space: 1rem;
+
+$sides: (
+  x:inline,
+  y: block,
+  left: inline-start,
+  top: block-start,
+  right: inline-end,
+  bottom: block-end,
+);
+
+$spaceing: (
+  1: $base-space * .25,
+  2: $base-space * .5,
+  3: $base-space * .75,
+  4: $base-space * 1, // base
+  5: $base-space * 1.5,
+  6: $base-space * 2,
+  7: $base-space * 2.5,
+  8: $base-space * 3,
+);
+
+//* breakpoints
+$breakpoints: (
+  sm: 36em, // 576px
+  md: 48em, // 768px
+  lg: 62rem, // 992px
+  xl: 75rem, // 1200px
+);
+
+//* utilities classes
+$utilites: (
+  justify-content: (
+    center: center,
+    between: space-between,
+    around: space-around
+  ),
+  align-items: (
+    center: center,
+    start: flex-start,
+    end: flex-end
+  ),
+  cursor: (
+    pointer: pointer
+  )
+);
