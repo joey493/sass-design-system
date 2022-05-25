@@ -55,7 +55,6 @@
 //* generate different utilities
 @each $utility, $prop in $utilites {
   @each $item, $value in $prop {
-    @debug $value;
     .#{$utility}-#{$item} {
       #{$utility}: $value; 
     }
